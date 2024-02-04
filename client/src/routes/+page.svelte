@@ -6,13 +6,32 @@
 	let messages: { sender: senderType; content: string }[] = [];
 	let inputValue = '';
 
-	function sendMessage() {
+	// ... other code
+
+	async function sendMessage() {
 		if (!inputValue.trim()) return;
 		const newMessage = { sender: senderType.user, content: inputValue };
 		messages = [...messages, newMessage];
 
-		const botResponse = { sender: senderType.bot, content: `Professor Ferdman: ${inputValue}` };
-		messages = [...messages, botResponse];
+		const response = await fetch('http://localhost:5000/api', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ message: inputValue })
+		});
+
+		if (response.ok) {
+			const responseData = await response.json();
+			const botResponse = {
+				sender: senderType.bot,
+				content: `Professor Ferdman: ${responseData.response}`
+			};
+			messages = [...messages, botResponse];
+		} else {
+			console.error('Error getting response:', await response.text());
+		}
+
 		inputValue = '';
 	}
 </script>

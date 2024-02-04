@@ -1,11 +1,9 @@
 import random
 import json
 import pickle
-import numpy as np 
-
+import numpy as np
 import nltk
-from nltk.stem import WordNetLemmatizer 
-
+from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
@@ -50,12 +48,4 @@ def get_response(intents_list, intents_json):
             result = random.choice(i['responses'])
             break
 
-    return result 
-
-print("bot is running, type!")
-
-while True:
-    message = input("")
-    ints = predict_class(message)
-    res = get_response(ints, intents)
-    print(res)
+    return result
