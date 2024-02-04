@@ -49,6 +49,7 @@
 		countdown = 100;
 		gameEnded = false;
 		messages = [];
+		gradeSrc = gradeImageMap['F'];
 		startCountdown();
 	}
 
@@ -154,13 +155,18 @@
 		}
 		return '';
 	};
-	function scrollToBottom(node: HTMLElement) {
+	function scrollToBottom(node: HTMLElement, messages: any[]) {
 		afterUpdate(() => {
-			node.scrollTop = node.scrollHeight;
+			if (messages.length > 0) {
+				node.scrollTop = node.scrollHeight;
+			}
 		});
 		return {
-			update() {
-				node.scrollTop = node.scrollHeight;
+			update(newMessages: any[]) {
+				messages = newMessages;
+				if (messages.length > 0) {
+					node.scrollTop = node.scrollHeight;
+				}
 			}
 		};
 	}
@@ -176,7 +182,10 @@
 			{countdown} SECONDS UNTIL GRADES ARE FINALIZED
 		</p>
 	</div>
-	<div class="mb-4 h-96 overflow-y-auto bg-white shadow rounded-lg p-4" use:scrollToBottom>
+	<div
+		class="mb-4 h-96 overflow-y-auto bg-white shadow rounded-lg p-4"
+		use:scrollToBottom={messages}
+	>
 		{#each messages as { sender, content, tag }}
 			<div class={`p-2 ${sender === 'user' ? 'text-right' : 'text-left'} ${getMessageClass(tag)}`}>
 				{content}
@@ -194,7 +203,11 @@
 		<div
 			class="fixed flex flex-col top-0 left-0 w-full h-full bg-gray-900 bg-opacity-75 flex items-center justify-center z-10"
 		>
-			<h1 class="text-8xl mb-4 text-red-500">YOU FAILED</h1>
+			{#if gradeSrc === gradeImageMap['F'] || gradeSrc === gradeImageMap['D']}
+				<h1 class="text-8xl mb-4 text-red-500">YOU FAILED</h1>
+			{:else}
+				<h1 class="text-8xl mb-4 text-green-500">YOU PASSED</h1>
+			{/if}
 			<button
 				class="px-6 py-3 bg-blue-500 text-white rounded focus:outline-none"
 				on:click={restartGame}
