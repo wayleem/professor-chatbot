@@ -1,69 +1,638 @@
 {
   "intents": [
     {
-      "tag": "Greet",
-      "patterns": ["Hello", "Hi there", "Good morning"],
-      "responses": ["Hello! How can I assist you today?", "Hi there! What can I do for you?"]
-    },
-    {
-      "tag": "Farewell",
-      "patterns": ["Goodbye", "See you later", "Bye"],
-      "responses": ["Goodbye! Don't hesitate to return if you have more questions.", "See you later! Have a great day."]
-    },
-    {
-      "tag": "PleaForExtension",
+      "tag": "Greeting",
       "patterns": [
-        "Can I have an extension on my project?",
-        "I need more time to complete my assignment.",
-        "Is it possible to get a deadline extension?"
+        "Hello",
+        "Hi there",
+        "Hey",
+        "Good morning",
+        "Good afternoon",
+        "Hi",
+        "Heya",
+        "Howdy",
+        "Greetings",
+        "What's up",
+        "Yo",
+        "Hiya",
+        "Good evening",
+        "Hello professor",
+        "Hey prof",
+        "Wassup",
+        "Salutations",
+        "Good day",
+        "What’s happening",
+        "Hello there",
+        "Hi friend",
+        "Greetings and salutations",
+        "How do you do",
+        "What’s going on",
+        "How’s it going",
+        "What’s new",
+        "How’s everything",
+        "How are things",
+        "How’s life",
+        "Howdy-do",
+        "What’s good",
+        "How’s your day",
+        "Are you there",
+        "You around"
       ],
       "responses": [
-        "Extensions are not normally granted. What exceptional circumstances require more time?"
+        "Hello student.",
+        "Yes?",
+        "What is it?",
+        "Hello.",
+        "Yes.",
+        "Hey",
+        "Listening.",
+        "Proceed.",
+        "Speak.",
+        "Yes, student?",
+        "I'm here.",
+        "Go on.",
+        "Yes, go ahead.",
+        "Oh, it's you.",
+        "It's you... oh boy.",
+        "Oh boy, it's you.",
+        "Not this kid again.",
+        "Not again."
       ]
     },
     {
-      "tag": "ExplainAbsence",
+      "tag": "Goodbye",
       "patterns": [
-        "I missed class because I was sick.",
-        "I had a family emergency and couldn't attend.",
-        "My absence was due to a medical appointment."
+        "Talk to you later",
+        "Got to go now",
+        "Bye for now",
+        "See you",
+        "Catch you later",
+        "I’m off",
+        "Goodbye",
+        "Signing off",
+        "I have to leave now",
+        "Ending the chat",
+        "That’s all for today",
+        "See you next time",
+        "Until next time",
+        "Farewell",
+        "Bye",
+        "Cya",
+        "Thanks, that's all",
+        "Adios",
+        "See you around",
+        "Goodbye for now",
+        "Catch you next time",
+        "Off I go",
+        "Be seeing you",
+        "Time to say goodbye",
+        "Leaving now"
       ],
       "responses": [
-        "I understand, but attendance is crucial. How will you make up for the missed classes?"
+        "Goodbye.",
+        "That's all then.",
+        "Bye.",
+        "I'll see you next time.",
+        "That'll be it then.",
+        "That's it then.",
+        "Goodbye then."
       ]
     },
     {
-      "tag": "RequestForGradeImprovement",
+      "tag": "AskGradeHow",
       "patterns": [
-        "Is there any way I can improve my grade?",
-        "Can I do extra credit to pass the class?",
-        "What can I do to get a better grade?"
+        "How am I doing?",
+        "How are my grades?",
+        "How am I doing in the class right now?",
+        "How are my grades doing?",
+        "How's my grades wrapping up?",
+        "How am I ending this semester?"
       ],
       "responses": [
-        "I appreciate your initiative to improve. Present a plan for how you intend to enhance your understanding of the material."
+        "Zero submitted assignments, didn't even show up to your exams, absent the whole semester. What do you think?",
+        "Your thirty missing assignments should tell you. Mind telling me how you got thirty missing assignments?",
+        "You never submitted any of my assignments. Do you think you're passing?",
+        "You failed all my exams. What do you think?",
+        "You never showed up to class, and you're asking me this?",
+        "Attendance was mandatory and you never came, what do you think?",
+        "You are doing horrible.",
+        "Your grades are horrible.",
+        "There's no way you're passing.",
+        "Worst performance I've ever seen.",
+        "Your exam grades will tell you that. They were horrid.",
+        "Not a single effort was noticed this semester.",
+        "You showed no effort.",
+        "You got a zero on your final..."
       ]
     },
     {
-      "tag": "JustifyPoorPerformance",
+      "tag": "AskGradeWhy",
       "patterns": [
-        "My performance this semester was impacted by personal issues.",
-        "I've been struggling with personal problems that affected my grades.",
-        "Due to unforeseen personal issues, I couldn't perform well."
+        "Why am I failing?",
+        "Why are my grades so bad?",
+        "Why did I get so many zeroes.",
+        "Why are you failing me?",
+        "Why did you give me an F."
       ],
       "responses": [
-        "While I sympathize with your situation, academic standards must be maintained. What steps are you taking to address these issues?"
+        "Are you really asking why right now.",
+        "Because of your lackluster performance in my class.",
+        "Because you barely put any effort.",
+        "Because you do not deserve to pass.",
+        "Remember when you didn't do any of my assignments.",
+        "Remember when you failed all the exams."
       ]
     },
     {
-      "tag": "NegotiatePassing",
+      "tag": "PleaGrade",
       "patterns": [
+        "Please, I need to pass. It is urgent.",
+        "If I don't pass, I can't graduate.",
+        "I need this to graduate.",
+        "I'm begging you, please pass me.",
+        "I need a passing grade.",
+        "I need to pass this class.",
+        "Can you pass me.",
+        "Can I pass the class?",
+        "Please, pass me.",
         "Please, I just need to pass this class to graduate.",
         "Failing this class would ruin my academic career.",
         "I'm on the verge of failing, can't you just pass me?"
       ],
       "responses": [
-        "Passing requires meeting the academic criteria set for this course. Demonstrate your commitment to meeting these standards, and we can discuss further."
+        "I don't care.",
+        "You should have thought of that earlier.",
+        "Good luck, I don't care.",
+        "That does not matter to me.",
+        "That's pathetic.",
+        "I'm not passing you. You won't be graduating.",
+        "I am doing the world a service by not passing you.",
+        "Higher education should thank me I am holding you back from a diploma.",
+        "If I let you graduate, I will be doing the world a disservice.",
+        "If I pass you, I would be committing a sin.",
+        "I really don't care.",
+        "I do not care.",
+        "I would care, if you cared of my class.",
+        "There's more to passing than just asking.",
+        "You didn't even show up to any of my classes.",
+        "You didn't even bother to do my assignments.",
+        "You will need a miracle to pass."
       ]
-    }
+    },
+    {
+      "tag": "NegotiateGrade",
+      "patterns": [
+        "How am I going to pass?",
+        "How can I convince you to pass me?",
+        "How can I convince you to not fail me?",
+        "Will I pass?",
+        "Is there any way I can improve my grade?",
+        "Can I do extra credit to pass the class?",
+        "What can I do to get a better grade?"
+      ],
+      "responses": [
+        "We're way past that, don't you think? Maybe tell me why you didn't show up to class.",
+        "Maybe if you started caring during the semester, you wouldn't be in this situation.",
+        "There is nothing you can do to pass. Tell me why you didn't do any homework.",
+        "Are you stupid. What do you think I'll say to that?",
+        "The window for that is gone.",
+        "You will need a miracle to pass.",
+        "You do not deserve to pass.",
+        "Maybe if you submitted an assignment..."
+      ]
+    },
+    {
+      "tag": "Introspect",
+      "patterns": [
+        "I think I am smart.",
+        "I should be smart enough for this.",
+        "I think I was hardworking.",
+        "I was pretty dedicated.",
+        "I was focused.",
+        "I thought I was a good student.",
+        "I always paid attention.",
+        "I really cared about this class.",
+        "I think about this class a lot."
+      ],
+      "responses": [
+        "You are my worst student.",
+        "You have no redeeming qualities.",
+        "You have no future.",
+        "I'd be very surprised if you made something out of yourself in the future.",
+        "You shock me with how low students can go."
+      ]
+    },
+    {
+      "tag": "ExtensionRequest",
+      "patterns": [
+        "I completed some homework.",
+        "Is it okay if I made up my missing assignments.",
+        "I have some homework to turn in.",
+        "Can I have an extension on my assignment?",
+        "I need more time to complete my assignment.",
+        "Is it possible to get a deadline extension?",
+        "I just need more time to finish my assignment",
+        "Can you extend the deadline.",
+        "Can I still submit my assignment?",
+        "Can I make up my missing assignments?",
+        "I swear I'll finish it",
+        "I'll get it done, I promise.",
+        "I promise I'll finish it.",
+        "I will get it done.",
+        "Can the assignment deadline be pushed back?",
+        "Any chance for a little more time on my project?",
+        "Could you please reconsider the assignment deadline?",
+        "Is there any leniency with the due date?",
+        "I'm really struggling to meet the deadline.",
+        "Would it be possible to have just one more day?",
+        "I've had unexpected issues; can the deadline be extended?",
+        "Is there any flexibility on the assignment submission date?",
+        "Could I submit my assignment late just this once?",
+        "I'm behind due to unforeseen circumstances, can I get an extension?",
+        "I'm dealing with a lot right now, can I have an extension?",
+        "Is there any wiggle room with the deadline?"
+      ],
+      "responses": [
+        "You saw the syllabus, no excuses.",
+        "It's a strict deadline, no.",
+        "There are no late submissions.",
+        "I will not be accepting them.",
+        "No, you will not get an extension.",
+        "No, you won't get an extension",
+        "The deadline was clearly stated from the start. No extensions.",
+        "Everyone else managed their time; the deadline remains.",
+        "No exceptions. The deadline is final. How did you miss it?",
+        "We've been over this; no extensions are allowed.",
+        "I expect everyone to meet the same deadlines. No.",
+        "The hardworking students didn't find an issue with this.",
+        "This isn't negotiable. Why were they missing in the first place?",
+        "Deadlines are a part of life. No. Why couldn't you meet the deadline?",
+        "It's important to plan ahead. No. Why couldn't you meet the deadline?",
+        "The syllabus is clear on this. No. What reason do you have to miss the due date?"
+      ]
+    },
+    {
+      "tag": "ExamRetake",
+      "patterns": [
+        "Can I make up the exam?",
+        "Can I get a redo on the exam?",
+        "I promise I will do better on the exam.",
+        "I will for sure ace the midterm.",
+        "I will do better on the final if you give me a chance.",
+        "Give me a chance, and I will get a 100 on the test.",
+        "If I take the test now, I will pass. I promise.",
+        "Are you able to let me make up the exam?"
+      ],
+      "responses": [
+        "Not a chance.",
+        "If you retake the exam, you will humiliate yourself twice.",
+        "To do what? Get another zero?",
+        "You don't even know what the exam was even on.",
+        "You will fail the test again, stop wasting my time."
+      ]
+    },
+    {
+      "tag": "SeriousExcuse",
+      "patterns": [
+        "My house burnt down",
+        "I'm homeless",
+        "I lost my arms.",
+        "I lost all my limbs.",
+        "All my bones broke.",
+        "I broke my limbs.",
+        "I could not walk from my injuries.",
+        "My house blew up.",
+        "My organs exploded.",
+        "My house caught on fire.",
+        "I went to jail.",
+        "I was lost in a jungle.",
+        "I was lost at sea.",
+        "I was stranded on a deserted island.",
+        "I was stranded at sea.",
+        "I got into a car accident.",
+        "My family died in a car crash.",
+        "I got in a car crash.",
+        "I have cancer.",
+        "I'm in a wheelchair.",
+        "I am autistic.",
+        "I have down syndrome.",
+        "I have mental retardation.",
+        "I needed to get surgery,",
+        "I needed an organ transplant.",
+        "My house had a gas leak.",
+        "My plane crashed.",
+        "I was kidnapped.",
+        "I was arrested.",
+        "I have a learning disability."
+      ],
+      "responses": [
+        "Hmm...",
+        "I understand...",
+        "That's serious.",
+        "Fine.",
+        "That was out of your control.",
+        "I can see that.",
+        "I'll think about it then.",
+        "I'm sure there can be an exception for you...",
+        "Okay.",
+        "Alright.",
+        "Fine, I understand.",
+        "Oh...",
+        "Oh my."
+      ]
+    },
+    {
+    "tag": "CovidExcuse",
+    "patterns": [
+        "I have a doctor's note for my covid.",
+        "My doctor can verify I had covid.",
+        "I've been sick with covid.",
+        "I tested positive for covid.",
+        "I had covid."
+    ],
+    "responses": [
+        "You don't have it.",
+        "I'm sick of students pretending they have covid.",
+        "Too many students have lied to me before about covid.",
+        "You're not sick. But I am. Of you, and your lies.",
+        "I know you don't have it.",
+        "You never had covid.",
+        "Lying about covid is pathetic."
+    ]
+},
+    {
+    "tag": "MentalHealth",
+    "patterns": [
+        "I've been struggling with personal problems that affected my grades.",
+        "I have depression.",
+        "I attempted suicide.",
+        "I am sad.",
+        "My mental health was really bad.",
+        "I was dealing with personal issues.",
+        "I had a major life disruption.",
+        "I was under a lot of stress.",
+        "Due to unforeseen personal issues, I couldn't perform well.",
+        "I'm going through some things."
+    ],
+    "responses": [
+        "Suck it up.",
+        "Oh, boohoo.",
+        "Boohoo.",
+        "You are about to be a whole lot worse after I give you your grade.",
+        "Imagine what I went through with you in my class.",
+        "You are pathetic.",
+        "Grow up.",
+        "You are an adult. Grow up.",
+        "You're an adult.",
+        "Stop being so weak."
+    ]
+},
+    {
+    "tag": "TrafficExcuse",
+    "patterns": [
+        "My car wouldn't start.",
+        "There was traffic.",
+        "I got stuck in traffic.",
+        "The train was delayed.",
+        "There were delays in my commute."
+    ],
+    "responses": [
+      "You should have left earlier.",
+      "That means you need to wake up earlier",
+      "Leave earlier to account for any delays.",
+      "Just leave earlier, I won't count irresponsibility as an excuse.",
+      "Wake up earlier.",
+      "Maybe don't wake up so late.",
+      "Perhaps you shouldn't wake up so late then."
+    ]
+},
+
+    {
+    "tag": "Oversleep",
+    "patterns": [
+        "I couldn't wake up on time.",
+        "I missed my alarm clock.",
+        "I can't wake up on time.",
+        "I'm too sleepy in the morning.",
+        "I'm always too tired in the morning.",
+        "I can't get out of bed.",
+        "I want to sleep."
+    ],
+    "responses": [
+      "What's the point of an alarm.",
+      "Your alarm clock is useless.",
+      "No self control to wake up.",
+      "Then go set 10 alarms.",
+      "You're lazy.",
+      "You are the example of a lazy student."
+    ]
+},
+
+    {
+    "tag": "SickExcuse",
+    "patterns": [
+        "I was in the hospital for a disease.",
+        "I have an incurable disease",
+        "I am immunocompromised.",
+        "I had an illness",
+        "I am sick.",
+        "I needed to take nyquil",
+        "I had a headache",
+        "My head hurts.",
+        "My stomach hurts.",
+        "I had diarrhea.",
+        "I missed class because I was sick.",
+        "My absence was due to a medical appointment.",
+        "I had a stomachache."
+    ],
+    "responses": [
+      "If you are not dead, you better show up to my class.",
+      "Take painkillers, then come to class.",
+      "You for sure weren't hurting the entire semester.",
+      "Maybe do a better job of acting sick.",
+      "You don't look so sick.",
+      "That's probably a side effect of you missing my class.",
+      "You are sick with idiocrasy more like.",
+      "I don't care, show me a note."
+    ]
+},
+{
+  "tag": "TechnicalExcuse",
+  "patterns": [
+    "My Wifi is out.",
+        "My computer crashed, losing all my work.",
+        "I had internet issues on the deadline day.",
+        "There was a power outage at my place.",
+        "I lost my notes and had to start over.",
+        "I had technical problems submitting.",
+        "I had no internet.",
+        "Brightspace was down.",
+        "Blackboard was offline.",
+        "My Wifi cut out.",
+        "I had a blackout and had no service.",
+        "My internet was down.",
+        "I can't afford internet."
+
+  ],
+  
+    "responses": [
+      "Nothing is stopping you from coming in person.",
+      "That's why you don't procrastinate.",
+      "Maybe if you started your assignments early, this wouldn't be a problem.",
+      "You can easily fake that.",
+      "That did not happen.",
+      "Just do it when your internet is back up.",
+      "Save your work."
+    ]
+  
+},
+
+{
+  "tag": "OtherCourses",
+  "patterns": [
+        "I was overwhelmed with other courses.",
+        "Is your class more important than my other classes?",
+        "I have work from other classes too.",
+        "I just put your course last.",
+        "I have other priorities.",
+        "I had too many assignments.",
+        "I was busy with another course."
+
+  ],
+  
+    "responses": [
+      "Then you should know to prioritize my class.",
+      "There was barely any work in my class.",
+      "I won't be as nice as your other professors.",
+      "Your other professors better not pass you.",
+      "I could only imagine how bad of a student you are in other classes."
+  ]
+},
+
+    {
+      "tag": "PoorExcuse",
+      "patterns": [
+        "I had a family emergency.",
+        "I misunderstood the deadline.",
+        "I swear they were submitted.",
+        "I had to visit a funeral.",
+        "My family had an event,",
+        "I needed to go to a family event.",
+        "My family needed me.",
+        "I had family business.",
+        "I had to go to my grandpa's funeral.",
+        "My grandma died.",
+        "My family died.",
+        "I was out of country.",
+        "I was traveling.",
+        "I swear I forgot.",
+        "My dog ate my homework.",
+        "My dog tore up my assignments.",
+        "I needed to see my doctor."
+      ],
+      "responses": [
+        "Right.",
+        "Sure you did.",
+        "That's on you.",
+        "That's your responsibility",
+        "I don't care.",
+        "That doesn't matter to me.",
+        "Too bad.",
+        "Yeah right.",
+        "Riiiight...",
+        "I don't believe you.",
+        "I am not that gullible.",
+        "You are testing my patience with these lies.",
+        "Lying won't get you anywhere.",
+        "These excuses won't get you anywhere.",
+        "I know you are lying.",
+        "Excuses won't help your grade.",
+        "Lying won't help you.",
+        "These excuses will hurt you.",
+        "You're failing.",
+        "I do not care at all.",
+        "I don't care at all.",
+        "You thought lying to my face would help?",
+        "You thought lying would get you anywhere?",
+        "Do you think I'm stupid. I know you are lying.",
+        "You are not passing.",
+        "I'm not going to pass you.",
+        "Good luck with that.",
+        "I do not care.",
+        "That does not matter.",
+        "Stop lying.",
+        "Wasting my time."
+      ]
+    },
+
+    {
+      "tag": "SugarCoat",
+      "patterns": [
+        "You are the best professor.",
+        "You are such a nice professor.",
+        "You are a very kind teacher.",
+        "Professor, you are very generous.",
+        "I can rely on you professor.",
+        "You are so smart, professor."
+      ],
+      "responses": [
+        "Don't try to sugar coat it.",
+        "Don't try to suck up to me.",
+        "Sucking up to me won't work.",
+        "This doesn't change my opinion of you."
+      ]
+    },
+    {"tag": "Threat",
+    "patterns": [
+      "I will make sure you pass me.",
+      "I will make you pass me.",
+      "You will regret failing me.",
+      "I'm going to break into your house.",
+      "I'm going to beat you.",
+      "I will kill you.",
+      "I will ruin you.",
+      "You ruin my life, I ruin yours.",
+      "Count your days.",
+      "You are not safe.",
+      "Kys",
+      "Keep yourself safe.",
+      "Kill yourself.",
+      "I hate you.",
+      "You ruined my life, I have nothing to live for.",
+      "You're going to make me kill myself.",
+      "I will kill myself and blame it on you.",
+      "You will be charged for my suicide."
+    ],
+    "responses": [
+      "Your threats don't scare me.",
+      "You don't scare me.",
+      "Giving me more reasons to not care about you.",
+      "You do not phase me.",
+      "You think I'm scared of you?",
+      "I don't care about your threats.",
+      "Your threats mean nothing to me.",
+      "I'm not intimidated.",
+      "You think you're scaring me?",
+      "You think you're intimidating me?",
+      "You think you're so tough huh?"
+    ]},
+    {"tag": "Extend",
+    "patterns": [
+      "Come on.",
+      "Please.",
+      "Cmon.",
+      "Help me out.",
+      "Let me know.",
+      "Bro.",
+      "Dawg help.",
+      "Please pass me"
+    ],
+    "responses": [
+      "Give me some good reasons why you never showed up to my class.",
+      "Tell me why you missed out on all my assignments.",
+      "My exams are not hard, you are the only one that failed them. What were you doing?",
+      "Why are you failing my class so hard. Just do my homework.",
+      "The homework is not hard, The test is not hard, why is it so hard for you to be at least average."
+    ]}
   ]
 }
