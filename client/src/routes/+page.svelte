@@ -96,7 +96,7 @@
 				const { response: botResponse, tag, points_change } = await response.json();
 				messages = [
 					...messages,
-					{ sender: 'bot', content: `Professor Ferdman: ${botResponse}`, tag }
+					{ sender: 'bot', content: `Professor Stark: ${botResponse}`, tag }
 				];
 				if (points_change < 0) {
 					minus_sound.play();
