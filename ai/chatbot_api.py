@@ -14,7 +14,8 @@ def get_bot_response():
     message = request.json['message']
     ints = predict_class(message)
     res = get_response(ints, intents) 
-    return jsonify({"response": res})
+    tag = ints[0]['intent'] if ints else "unknown"
+    return jsonify({"response": res, "tag": tag})
 
 if __name__ == "__main__":
     app.run(debug=True)
