@@ -3,19 +3,36 @@
 	import bad from '../assets/BAD.png';
 	import neutral from '../assets/NEUTRAL.png';
 	import good from '../assets/GOOD.png';
+	import f_grade from '../assets/F.png';
+	import d_grade from '../assets/D.png';
+	import c_grade from '../assets/C.png';
+	import b_grade from '../assets/B.png';
+	import a_grade from '../assets/A.png';
 	import plus_mp3 from '../assets/PLUS.mp3';
 	import minus_mp3 from '../assets/MINUS.mp3';
 	import music from '../assets/bgmusic.mp3';
 	import { afterUpdate, onMount } from 'svelte';
 
+	const gradeImageMap = {
+		A: a_grade,
+		B: b_grade,
+		C: c_grade,
+		D: d_grade,
+		F: f_grade
+	};
+
 	let messages: { sender: string; content: string; tag?: string }[] = [];
 	let inputValue = '';
 	let points = 0;
 	let moodImageSrc = bad;
+	let gradeSrc = gradeImageMap['F'];
 	let deduction = false;
 	let gain = false;
-	let countdown = 10;
+	let countdown = 100;
 	let gameEnded = false;
+	let plus_sound: HTMLAudioElement;
+	let minus_sound: HTMLAudioElement;
+	let bg_music: HTMLAudioElement;
 
 	function startCountdown() {
 		const timer = setInterval(() => {
@@ -29,8 +46,9 @@
 
 	function restartGame() {
 		points = 0;
-		countdown = 60;
+		countdown = 100;
 		gameEnded = false;
+		messages = [];
 		startCountdown();
 	}
 
@@ -60,6 +78,7 @@
 	});
 
 	async function sendMessage() {
+		bg_music.play();
 		if (!inputValue.trim()) return;
 		const newMessage = { sender: 'user', content: inputValue };
 		messages = [...messages, newMessage];
@@ -80,11 +99,13 @@
 					{ sender: 'bot', content: `Professor Ferdman: ${botResponse}`, tag }
 				];
 				if (points_change < 0) {
+					minus_sound.play();
 					deduction = true;
 					setTimeout(() => {
 						deduction = false;
 					}, 2000);
 				} else if (points_change > 0) {
+					plus_sound.play();
 					gain = true;
 					setTimeout(() => {
 						gain = false;
@@ -92,6 +113,17 @@
 				}
 
 				points += points_change;
+				if (points >= 90) {
+					gradeSrc = gradeImageMap['A'];
+				} else if (points >= 70) {
+					gradeSrc = gradeImageMap['B'];
+				} else if (points >= 50) {
+					gradeSrc = gradeImageMap['C'];
+				} else if (points >= 30) {
+					gradeSrc = gradeImageMap['D'];
+				} else {
+					gradeSrc = gradeImageMap['F'];
+				}
 			} else {
 				console.error('Error getting response:', await response.text());
 			}
@@ -102,15 +134,25 @@
 		inputValue = '';
 	}
 
+	const negativeTags = [
+		'CovidExcuse',
+		'MentalHealth',
+		'TrafficExcuse',
+		'Oversleep',
+		'SickExcuse',
+		'TechnicalExcuse',
+		'OtherCourses',
+		'SugarCoat',
+		'Threat',
+		'PoorExcuse'
+	];
+
 	const getMessageClass = (tag?: string) => {
-		switch (tag) {
-			case 'PositiveExcuse':
-				return 'text-green-500';
-			case 'NegativeExcuse':
-				return 'text-red-500';
-			default:
-				return '';
+		if (tag === 'SeriousExcuse') return 'text-green-700';
+		if (tag && negativeTags.includes(tag)) {
+			return 'text-red-700';
 		}
+		return '';
 	};
 	function scrollToBottom(node: HTMLElement) {
 		afterUpdate(() => {
@@ -125,7 +167,10 @@
 	let flipImage = false;
 </script>
 
-<div class="flex flex-col p-4 h-screen overscroll-none">
+<div class="flex flex-col p-4">
+	<audio src={plus_mp3} bind:this={plus_sound} />
+	<audio src={minus_mp3} bind:this={minus_sound} />
+	<audio src={music} preload="auto" bind:this={bg_music} />
 	<div class="mb-4">
 		<p class="text-center font-black text-red-500 text-xl">
 			{countdown} SECONDS UNTIL GRADES ARE FINALIZED
@@ -158,9 +203,12 @@
 			</button>
 		</div>
 	{/if}
-	<img
-		class={`w-[32vw] self-center ${flipImage ? 'scale-x-[-1]' : ''}`}
-		alt="mood"
-		src={moodImageSrc}
-	/>
+	<div class="flex flex-row self-center">
+		<img class="lg:w-[24vw] md:w-[30vw] w-[24vw]" alt="grade" src={gradeSrc} />
+		<img
+			class={`lg:w-[24vw] md:w-[30vw] w-[24vw] ${flipImage ? 'scale-x-[-1]' : ''}`}
+			alt="mood"
+			src={moodImageSrc}
+		/>
+	</div>
 </div>

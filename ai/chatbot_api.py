@@ -17,10 +17,12 @@ def get_bot_response():
     tag = ints[0]['intent'] if ints else "unknown"
     
     points_change = 0
+    negative_tags = ["CovidExcuse", "MentalHealth", "TrafficExcuse", "Oversleep", "SickExcuse", 
+                     "TechnicalExcuse", "OtherCourses", "SugarCoat", "Threat", "PoorExcuse"]
 
-    if tag == "PositiveExcuse":
+    if tag == "SeriousExcuse":
         points_change = 10
-    elif tag == "NegativeExcuse":
+    elif tag in negative_tags:
         points_change = -5
 
     return jsonify({"response": res, "tag": tag, "points_change": points_change})
