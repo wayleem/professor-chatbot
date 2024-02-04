@@ -1,0 +1,69 @@
+{
+  "intents": [
+    {
+      "tag": "Greet",
+      "patterns": ["Hello", "Hi there", "Good morning"],
+      "responses": ["Hello! How can I assist you today?", "Hi there! What can I do for you?"]
+    },
+    {
+      "tag": "Farewell",
+      "patterns": ["Goodbye", "See you later", "Bye"],
+      "responses": ["Goodbye! Don't hesitate to return if you have more questions.", "See you later! Have a great day."]
+    },
+    {
+      "tag": "PleaForExtension",
+      "patterns": [
+        "Can I have an extension on my project?",
+        "I need more time to complete my assignment.",
+        "Is it possible to get a deadline extension?"
+      ],
+      "responses": [
+        "Extensions are not normally granted. What exceptional circumstances require more time?"
+      ]
+    },
+    {
+      "tag": "ExplainAbsence",
+      "patterns": [
+        "I missed class because I was sick.",
+        "I had a family emergency and couldn't attend.",
+        "My absence was due to a medical appointment."
+      ],
+      "responses": [
+        "I understand, but attendance is crucial. How will you make up for the missed classes?"
+      ]
+    },
+    {
+      "tag": "RequestForGradeImprovement",
+      "patterns": [
+        "Is there any way I can improve my grade?",
+        "Can I do extra credit to pass the class?",
+        "What can I do to get a better grade?"
+      ],
+      "responses": [
+        "I appreciate your initiative to improve. Present a plan for how you intend to enhance your understanding of the material."
+      ]
+    },
+    {
+      "tag": "JustifyPoorPerformance",
+      "patterns": [
+        "My performance this semester was impacted by personal issues.",
+        "I've been struggling with personal problems that affected my grades.",
+        "Due to unforeseen personal issues, I couldn't perform well."
+      ],
+      "responses": [
+        "While I sympathize with your situation, academic standards must be maintained. What steps are you taking to address these issues?"
+      ]
+    },
+    {
+      "tag": "NegotiatePassing",
+      "patterns": [
+        "Please, I just need to pass this class to graduate.",
+        "Failing this class would ruin my academic career.",
+        "I'm on the verge of failing, can't you just pass me?"
+      ],
+      "responses": [
+        "Passing requires meeting the academic criteria set for this course. Demonstrate your commitment to meeting these standards, and we can discuss further."
+      ]
+    }
+  ]
+}
