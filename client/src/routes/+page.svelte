@@ -38,7 +38,7 @@
 
 <div class="p-4">
 	<div class="mb-4 h-96 overflow-y-auto bg-white shadow rounded-lg p-4">
-		{#each messages as { sender, content }, index}
+		{#each messages as { sender, content }}
 			<div class="{sender === 'user' ? 'text-right' : 'text-left'} p-2">
 				{content}
 			</div>
